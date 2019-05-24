@@ -1,4 +1,5 @@
 
+
 # deckofcardsapi-client
 
 Promise-based NodeJS Client for https://deckofcardsapi.com. Supporting default instance (https://deckofcardsapi.com) or a custom one.
@@ -8,8 +9,7 @@ Promise-based NodeJS Client for https://deckofcardsapi.com. Supporting default i
 Here is a basic exemple, for more detailed informations, see wiki.
 
 ```javascript
-
-const  DeckBuilder  =  require("./lib/deckbuilder");
+const  DeckBuilder  =  require("deckofcardsapi-client");
 
 try {
 
@@ -37,6 +37,13 @@ try {
 	console.log(error);
 
 }
+```
 
-``
+## Using custom instance
 
+In order to use your custom instance, include this code.
+
+```javascript
+const api = require("deckofcardsapi-client").api;
+api.sethost("https://exemple.com");
+```
