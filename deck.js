@@ -36,6 +36,7 @@ class Deck {
             throw error;
         }
     }
+
     async addToPile(pileName, cards) {
         toCardCodeArray(cards);
         try {
@@ -54,6 +55,65 @@ class Deck {
 
             return res;
 
+        } catch (error) {
+            throw error;
+        }
+    }
+    async listPile(pileName) {
+        try {
+            const res = (await api.listPile(this.id, pileName)).data;
+
+            if (res.success !== true)
+                throw new CardError(res.error);
+            if(!res.piles[pileName])
+                throw new CardError("Pile does not exist");
+            
+            const cards = res.piles[pileName].cards;
+            if (!cards)
+                return [];
+
+            return toCardArray(res.piles[pileName].cards);
+        } catch (error) {
+            throw error;
+        }
+    }
+    async shufflePile(pileName) {
+        try {
+            const res = (await api.shufflePile(this.id, pileName)).data;
+
+            if(res.success !== true)
+                throw new CardError(res.error);
+            
+            return res;
+        } catch (error) {
+            throw error;
+        }
+    }
+    async drawFromPile(pileName, count) {
+        try {
+            
+            const res = (await api.pileDraw(this.id, pileName, count)).data;
+            return toCardArray(res.cards);
+            
+        } catch (error) {
+            throw error;
+        }
+    }
+    async drawFromPileBottom(pileName, count) {
+        try {
+            
+            const res = (await api.pileDrawBottom(this.id, pileName, count)).data;
+
+            return toCardArray(res.cards);
+
+        } catch (error) {
+            throw error;
+        }
+    }
+    async drawCardsFromPile(pileName, cards) {
+        try {
+            const res = (await api.pileDrawCards(this.id, pileName, cards)).data;
+            return toCardArray(res.cards);
         } catch (error) {
             throw error;
         }
