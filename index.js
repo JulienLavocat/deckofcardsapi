@@ -1,1 +1,1 @@
-module.exports = require("./deck");
+module.exports = require("./lib/deck");
