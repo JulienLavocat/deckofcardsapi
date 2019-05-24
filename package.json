@@ -1,6 +1,6 @@
 {
   "name": "deckofcardsapi",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "DeckOfCards API wrapper for NodeJS",
   "main": "index.js",
   "scripts": {
