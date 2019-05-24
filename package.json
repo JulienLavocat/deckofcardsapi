@@ -1,0 +1,27 @@
+{
+  "name": "deckofcardsapi",
+  "version": "0.0.0",
+  "description": "DeckOfCards API wrapper for NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulienLavocat/deckofcardsapi.git"
+  },
+  "keywords": [
+    "cards",
+    "playing",
+    "cards"
+  ],
+  "author": "Julien Lavocat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulienLavocat/deckofcardsapi/issues"
+  },
+  "homepage": "https://github.com/JulienLavocat/deckofcardsapi#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
