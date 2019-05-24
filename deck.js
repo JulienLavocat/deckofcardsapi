@@ -37,6 +37,9 @@ class Deck {
         }
     }
 
+    //TODO - Critical: Adding error managment
+    //TODO - QOL: Moving Pile-related code to it's own class
+
     async addToPile(pileName, cards) {
         toCardCodeArray(cards);
         try {
