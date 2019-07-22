@@ -1,7 +1,6 @@
 const CardsClient = require("./lib");
 
 const client = new CardsClient();
-
 test();
 
 async function test() {
@@ -14,6 +13,7 @@ async function test() {
 		console.log(await discard.list());
 		discard.add(await deck.draw(2));
 		console.log(await discard.list());
+
 
 	} catch (error) {
 		console.log(error);
